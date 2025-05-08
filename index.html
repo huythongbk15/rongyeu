@@ -221,10 +221,11 @@
             });
         });
 
-        // Xử lý nút "Không đồng ý" di chuyển trong khung điện thoại
+        // Xử lý nút "Không đồng ý" di chuyển khi click
         const noBtn = document.getElementById('no-btn');
         const phoneFrame = document.querySelector('.phone-frame');
-        noBtn.addEventListener('mouseenter', () => {
+        noBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Ngăn hành vi mặc định của nút
             const frameRect = phoneFrame.getBoundingClientRect();
             const maxX = frameRect.width - noBtn.offsetWidth;
             const maxY = frameRect.height - noBtn.offsetHeight;
